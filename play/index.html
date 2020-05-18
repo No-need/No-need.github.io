@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <style>
+        #img{
+            width:100vw;
+            height:calc(100vh - 45px);
+            max-height:100vw;
+            max-width:100vh;
+        }
+        #img2{
+            width:100vw;
+            height:calc(100vh - 45px);
+            max-height:100vw;
+            max-width:100vh;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <table>
+            <tr>
+                <td><img id="img" src="" alt=""></td>
+                <td><img id="img2" src="" alt=""></td>
+            </tr>
+        </table>
+        
+        <div id="content"></div>
+        <table>
+            <tr>
+                <td><button id="press">抽一個</button></td>
+                <td><button id="press2">抽兩個</button></td>
+                <td><button id="refresh">重新</button></td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+<script>
+    var content=["ㄅ","ㄆ","ㄇ","ㄈ",
+    "ㄉ","ㄊ","ㄋ","ㄌ",
+    "ㄍ","ㄎ","ㄏ",
+    "ㄐ","ㄑ","ㄒ",
+    "ㄓ","ㄔ","ㄕ","ㄖ",
+    "ㄗ","ㄘ","ㄙ",
+    "ㄧ","ㄨ","ㄩ",
+    "ㄚ","ㄛ","ㄜ","ㄝ",
+    "ㄞ","ㄟ","ㄠ","ㄡ",
+    "ㄢ","ㄣ","ㄤ","ㄥ",
+    "ㄦ"];
+    document.getElementById("press").addEventListener("click",function (){
+        var r = Math.floor(Math.random()*(36-0+1)+0);
+        //document.getElementById("content").innerHTML = content[r];
+        document.getElementById("img").src = "注音/"+content[r]+".png";
+        document.getElementById("img2").src = "";
+    },false);
+    document.getElementById("press2").addEventListener("click",function (){
+        var r = Math.floor(Math.random()*(36-0+1)+0);
+        var r2 = Math.floor(Math.random()*(36-0+1)+0);
+        //document.getElementById("content").innerHTML = content[r];
+        document.getElementById("img").src = "注音/"+content[r]+".png";
+        document.getElementById("img2").src = "注音/"+content[r2]+".png";
+    },false);
+    document.getElementById("refresh").addEventListener("click",function (){
+        document.getElementById("img").src = "圖片/"+Math.floor(Math.random()*(5-1+1)+1)+".gif";
+        document.getElementById("img2").src = "";
+    },false);
+</script>
+</html>
