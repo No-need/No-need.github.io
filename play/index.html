@@ -6,16 +6,15 @@
     <title>Play</title>
     <style>
         #img{
-            width:100vw;
-            height:calc(100vh - 45px);
-            max-height:100vw;
-            max-width:100vh;
+            width:min(100vh,100vw);
+            height:calc(min(100vh,100vw) - 45px);
         }
         #img2{
-            width:100vw;
-            height:calc(100vh - 45px);
-            max-height:100vw;
-            max-width:100vh;
+            width:min(100vh,100vw);
+            height:calc(min(100vh,100vw) - 45px);
+        }
+        body{
+            margin:0px;
         }
     </style>
 </head>
@@ -23,8 +22,7 @@
     <div align="center">
         <table>
             <tr>
-                <td><img id="img" src="" alt=""></td>
-                <td><img id="img2" src="" alt=""></td>
+                <td><img id="img" src="" alt=""><img id="img2" src="" alt=""></td>
             </tr>
         </table>
         
