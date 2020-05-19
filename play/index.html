@@ -51,6 +51,10 @@
     "ㄞ","ㄟ","ㄠ","ㄡ",
     "ㄢ","ㄣ","ㄤ","ㄥ",
     "ㄦ"];
+    var image = new Image();
+    for(var i=0;i<37;i++){
+        image.src = content[i]+".png";
+    }
     document.getElementById("press").addEventListener("click",function (){
         var r = Math.floor(Math.random()*(36-0+1)+0);
         //document.getElementById("content").innerHTML = content[r];
@@ -68,5 +72,14 @@
         document.getElementById("img").src = "圖片/"+Math.floor(Math.random()*(5-1+1)+1)+".gif";
         document.getElementById("img2").src = "";
     },false);
+    var rc=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+    var color="#";
+    setInterval(function (){
+        for(var i=0;i<6;i++){
+            color += rc[Math.floor(Math.random()*(15-0+1)+0)];
+        }
+        document.body.style.backgroundColor = color;
+        color = "#";
+    },1000);
 </script>
 </html>
