@@ -16,6 +16,15 @@
         body{
             margin:0px;
         }
+        .button{
+            width:100px;
+            height:30px;
+            font-family: "微軟正黑體";
+            color:blue;
+        }
+        #refresh{
+            color:red;
+        }
     </style>
 </head>
 <body>
@@ -29,9 +38,9 @@
         <div id="content"></div>
         <table>
             <tr>
-                <td><button id="press">抽一個</button></td>
-                <td><button id="press2">抽兩個</button></td>
-                <td><button id="refresh">重新</button></td>
+                <td><button id="press" class="button">抽一個</button></td>
+                <td><button id="press2" class="button">抽兩個</button></td>
+                <td><button id="refresh" class="button">重新</button></td>
             </tr>
         </table>
         
@@ -57,17 +66,10 @@
         preload("圖片/"+i+".gif");
     }
     document.getElementById("press").addEventListener("click",function (){
-        var r = Math.floor(Math.random()*(36-0+1)+0);
-        //document.getElementById("content").innerHTML = content[r];
-        document.getElementById("img").src = "注音/"+content[r]+".png";
-        document.getElementById("img2").src = "";
+        loadingone();
     },false);
     document.getElementById("press2").addEventListener("click",function (){
-        var r = Math.floor(Math.random()*(36-0+1)+0);
-        var r2 = Math.floor(Math.random()*(36-0+1)+0);
-        //document.getElementById("content").innerHTML = content[r];
-        document.getElementById("img").src = "注音/"+content[r]+".png";
-        document.getElementById("img2").src = "注音/"+content[r2]+".png";
+        loadingtwo();
     },false);
     document.getElementById("refresh").addEventListener("click",function (){
         document.getElementById("img").src = "圖片/"+Math.floor(Math.random()*(5-1+1)+1)+".gif";
@@ -86,6 +88,29 @@
         var image = new Image();
         image.src = src;
         return;
+    }
+    function loadingone(){
+        document.getElementById("img2").src = "";
+        for(var j=1;j<=1;j++){
+            for(i=0;i<20;i++){
+                setTimeout(function(){
+                    var r = Math.floor(Math.random()*(36-0+1)+0);
+                    document.getElementById("img").src = "注音/"+content[r]+".png";
+                },1000*j-i*50);
+            }
+        }
+    }
+    function loadingtwo(){
+        for(var j=1;j<=1;j++){
+            for(i=0;i<20;i++){
+                setTimeout(function(){
+                    var r = Math.floor(Math.random()*(36-0+1)+0);
+                    var r2 = Math.floor(Math.random()*(36-0+1)+0);
+                    document.getElementById("img").src = "注音/"+content[r]+".png";
+                    document.getElementById("img2").src = "注音/"+content[r2]+".png";
+                },1000*j-i*50);
+            }
+        }
     }
 </script>
 </html>
