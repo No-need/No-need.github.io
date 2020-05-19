@@ -51,9 +51,12 @@
     "ㄞ","ㄟ","ㄠ","ㄡ",
     "ㄢ","ㄣ","ㄤ","ㄥ",
     "ㄦ"];
-    var image = new Image();
-    for(var i=0;i<37;i++){
-        image.src = content[i]+".png";
+    var i;
+    for(i=0;i<37;i++){
+        preload("注音/"+content[i]+".png");
+    }
+    for(i=1;i<=5;i++){
+        preload("圖片/"+i+".gif");
     }
     document.getElementById("press").addEventListener("click",function (){
         var r = Math.floor(Math.random()*(36-0+1)+0);
@@ -81,5 +84,10 @@
         document.body.style.backgroundColor = color;
         color = "#";
     },1000);
+    function preload(src){
+        var image = new Image();
+        image.src = src;
+        return;
+    }
 </script>
 </html>
