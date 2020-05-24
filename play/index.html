@@ -75,7 +75,7 @@
         document.getElementById("img").src = "圖片/"+Math.floor(Math.random()*(5-1+1)+1)+".gif";
         document.getElementById("img2").src = "";
     },false);
-    var rc=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
+    /*var rc=['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'];
     var color="#";
     setInterval(function (){
         for(var i=0;i<6;i++){
@@ -83,7 +83,7 @@
         }
         document.body.style.backgroundColor = color;
         color = "#";
-    },1000);
+    },1000);*/
     function preload(src){
         var image = new Image();
         image.src = src;
@@ -99,6 +99,9 @@
                 },1000*j-i*50);
             }
         }
+    }
+    async function a(){
+        await 
     }
     function loadingtwo(){
         for(var j=1;j<=1;j++){
