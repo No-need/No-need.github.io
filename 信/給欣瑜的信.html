@@ -10,6 +10,8 @@
             background-image:url("../圖片/音と色の欠けた世界.jpg");
             background-repeat: no-repeat;
             background-attachment :fixed;
+            background-size: 1280px 100vh;
+            transition-duration: 3000ms;
         }
         #title{
             font-size: 40px;
@@ -20,6 +22,10 @@
             font-family: "微軟正黑體";
             font-weight:bold;
         }
+        #mainDiv{
+            color:  black;
+            transition-duration: 3000ms;
+        }
     </style>
 </head>
 <body >
@@ -28,7 +34,7 @@
     </audio>
     <div id="mainDiv" style="margin-left: 8%;" >
         <h3 id="title">
-            給高欣瑜的信
+            給欣瑜的信
         </h3>
         <p id="mainText" style="white-space:pre-wrap;word-break: break-all;word-wrap:break-word;">
 先預祝妳考試順利吧，也許看到這段文字的時候已經考上了?
@@ -52,13 +58,13 @@
 當然我猜測，你可能是認為我每個禮拜都會準時開，那你就沒必要來了
 其實也沒錯，那時候我真的練琴練很兇
 
-寫到這裡想起了很多東西，但不想打得像我的自傳一樣，就快速吧
+寫到這裡想起了很多東西，但不想打得像自傳一樣，就快轉吧
 第二學期期末音樂會的主持，那時候我本來想接，就算說不是為了補償，也沒人會相信吧
 很感謝你跳出來接下了這個工作
 
 再來我們就卸幹了
 舉辦54的送舊
-那時候你邀我一起拍送舊給54的話也很開心ㄛ
+那時候你邀我一起拍送舊給54的話也很開心
 你應該是覺得一個人講很尷尬吧
 
 不知道鋼琴社的經歷對你來說有沒有幫助呢
@@ -108,7 +114,6 @@
 而且想以自己喜歡的方式過完在學校的日子
 但好像沒談到太深入的話題哈哈
 
-
 本來是想親口說的，但我們好像不會再見到
 畢竟沒有什麼特殊理由，是不會出現在同一個地方的
 而且看了這封稍嫌幼稚，沒有文筆的信，也許你一輩子都不想再見到我呢
@@ -123,7 +128,6 @@
 其實還有很多想說的，但那留到平日的聊天吧
 若你沒有變的討厭我的話，或是本來就已經很討厭了呢
 
-
 祝你在茫茫人海中找到能陪你一起走下去的人們
 祝你能一直以自己喜歡的方式生活
         </p>
@@ -136,6 +140,11 @@
 </body>
 <script>
     var mainDiv = document.getElementById("mainDiv");
+    var imageList = [
+        "Nagato_Yuki_Yuki.gif",
+        "音と色の欠けた世界.jpg",
+        "bg01.jpg"
+    ];
     mainDiv.addEventListener("mousedown",function(){
         var x = document.getElementById("music"); 
             x.volume = 0.5;
@@ -149,5 +158,22 @@
             x.play();     
             x.muted = false;  
     });
+    setInterval(function(){
+        var imageIndex = Math.floor(Math.random()*3);
+        document.body.style.backgroundImage = 'url(../圖片/'+imageList[imageIndex]+')';
+        console.log(imageList[imageIndex]);
+        switch(imageIndex){
+            case 0:
+                document.getElementById("mainDiv").style.color = "white";
+                break;
+            case 1:
+                document.getElementById("mainDiv").style.color = "black";
+                break;
+            case 2:
+                document.getElementById("mainDiv").style.color = "white";
+                break;
+        }
+    },10000);
+
 </script>
 </html>
