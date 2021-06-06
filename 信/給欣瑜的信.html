@@ -23,6 +23,9 @@
     </style>
 </head>
 <body >
+    <audio id="music"  loop='true' >
+        <source src="../音樂/【うぃんぐ】想像フォレスト(piano.ver).mp3" type="audio/mp3">
+    </audio>
     <div id="mainDiv" style="margin-left: 8%;" >
         <h3 id="title">
             給高欣瑜的信
@@ -124,4 +127,20 @@
         </p>
     </div>
 </body>
+<script>
+    var mainDiv = document.getElementById("mainDiv");
+    mainDiv.addEventListener("mousedown",function(){
+        var x = document.getElementById("music"); 
+            x.volume = 0.4;
+            x.play();     
+            x.muted = false;  
+    });
+            
+    mainDiv.addEventListener("touchstart",function(){
+        var x = document.getElementById("music"); 
+            x.volume = 0.4;
+            x.play();     
+            x.muted = false;  
+    });
+</script>
 </html>
