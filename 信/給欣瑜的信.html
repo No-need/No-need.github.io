@@ -16,6 +16,8 @@
         #title{
             font-size: 40px;
             color: white;
+            margin-left: 8%;
+            margin-right: 8%;
         }
         #mainText{
             font-size:18px;
@@ -23,19 +25,22 @@
             font-weight:bold;
         }
         #mainDiv{
-            color:  black;
+            color:black;
             transition-duration: 3000ms;
+            background-color: rgba(255, 255,255, 0.4);
         }
     </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
 </head>
 <body >
     <audio id="music"  loop='true' >
         <source src="../音樂/【うぃんぐ】想像フォレスト(piano.ver).mp3" type="audio/mp3">
     </audio>
-    <div id="mainDiv" style="margin-left: 8%;" >
-        <h3 id="title">
-            給欣瑜的信
-        </h3>
+    <h3 id="title">
+        給欣瑜的信
+    </h3>
+    <div id="mainDiv" style="margin-left: 8%;margin-right: 8%;" >
         <p id="mainText" style="white-space:pre-wrap;word-break: break-all;word-wrap:break-word;">
 先預祝妳考試順利吧，也許看到這段文字的時候已經考上了?
 我覺得能為自己的人生下重大決定都是很需要勇氣的，很值得敬佩
@@ -131,9 +136,10 @@
 祝你在茫茫人海中找到能陪你一起走下去的人們
 祝你能一直以自己喜歡的方式生活
         </p>
-        <p style="font-family: '微軟正黑體';font-weight: bold;text-align: right;white-space:pre-wrap;word-break: break-all;word-wrap:break-word;">
+        <p style="font-size: 20px;font-family: 'Stint Ultra Condensed', cursive;font-weight: bold;text-align: right;white-space:pre-wrap;word-break: break-all;word-wrap:break-word;">
 願不成熟的文字能傳達到
 孫祥皓敬啟
+2021/06/07  01:57 a.m.
         </p>
     </div>
 
@@ -143,7 +149,16 @@
     var imageList = [
         "Nagato_Yuki_Yuki.gif",
         "音と色の欠けた世界.jpg",
-        "bg01.jpg"
+        "bg01.jpg",
+        "bg02.jpg",
+        "bg03.jpg",
+        "bg04.jpg",
+        "bg05.jpg",
+        "bg06.jpg",
+        "bg07.jpg",
+        "bg08.jpg",
+        "bg09.jpg",
+        "夏洛特1.jpg"
     ];
     mainDiv.addEventListener("mousedown",function(){
         var x = document.getElementById("music"); 
@@ -159,20 +174,9 @@
             x.muted = false;  
     });
     setInterval(function(){
-        var imageIndex = Math.floor(Math.random()*3);
+        var imageIndex = Math.floor(Math.random()*imageList.length);
         document.body.style.backgroundImage = 'url(../圖片/'+imageList[imageIndex]+')';
         console.log(imageList[imageIndex]);
-        switch(imageIndex){
-            case 0:
-                document.getElementById("mainDiv").style.color = "white";
-                break;
-            case 1:
-                document.getElementById("mainDiv").style.color = "black";
-                break;
-            case 2:
-                document.getElementById("mainDiv").style.color = "white";
-                break;
-        }
     },10000);
 
 </script>
